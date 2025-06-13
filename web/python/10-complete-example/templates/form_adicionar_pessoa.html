@@ -1,0 +1,44 @@
+{% extends 'main_template.html' %}
+
+{% block header %}
+<h1>{% block title %}Cadastrar pessoa{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+<form action="adicionar_pessoa">
+    <p>
+        Nome: <input type="text" name="nome" value="João da Silva">
+    </p>
+    <p>
+        Email: <input type="text" name="email" value="jo@gmail.com">
+    </p>
+    <p>
+        Telefone: <input type="text" name="telefone" value="47 9 9123 4567">
+    </p>
+    <p>
+        CPF: <input type="text" name="CPF" value="01234567890">
+    </p>
+     <p>
+        RG: <input type="text" name="RG" value="1234567">
+    </p>
+    <p>
+        Nascimento: <input type="date" name="nascimento" value="0000-06-06">
+    </p>
+    <p>
+        CEP: <input type="text" name="CEP" value="00000000">
+    </p>
+    <p>
+        Nome Da Mãe: <input type="text" name="Mãe" value="Mike Grávido">
+    </p>
+    <p>
+        4 últimos digitos do seu cartão: <input type="number" name="digitos" value="0123">
+    </p>
+    <p>
+        Saldo: <input type="number" name="saldo" value="2000000">
+    </p>
+
+    <button>Cadastrar</button>
+</form>
+
+{% endblock %}
