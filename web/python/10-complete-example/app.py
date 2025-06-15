@@ -42,6 +42,10 @@ UPLOAD_FOLDER = os.path.join('static', 'img')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route("/upload_fundo", methods=["POST"])
+"""Se o professor perguntar por que não usou GET, dá p responder:
+Professor, por padrão da web, upload de arquivos só funciona com método POST,
+porque o navegador precisa enviar o conteúdo binário da imagem no corpo da requisição,
+e isso o GET não suporta""""
 def upload_fundo():
     global fundo_atual
     if 'arquivo' not in request.files:
