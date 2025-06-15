@@ -7,10 +7,10 @@
 {% block content %}
   Bem vindo ao sistema de cadastro de pessoas.
 
-  <h2>Trocar Fundo da Página</h2>
-  <form action="/trocar_fundo" method="get">
-      <label>Informe o nome do arquivo de imagem (exemplo: fundo.jpg, fundo.png):</label><br>
-      <input type="text" name="fundo">
-      <button type="submit">Trocar Fundo</button>
-  </form>
+<h2>Trocar Fundo da Página (Upload)</h2>
+<form action="/upload_fundo" method="post" enctype="multipart/form-data">
+    <input type="file" name="arquivo">
+    <button type="submit">Enviar Imagem</button>
+</form>
+
 {% endblock %}
