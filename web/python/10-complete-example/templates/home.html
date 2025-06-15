@@ -5,5 +5,12 @@
 {% endblock %}
 
 {% block content %}
-  Bem vindo as sistema de cadastro de pessoas.
+  Bem vindo ao sistema de cadastro de pessoas.
+
+  <h2>Trocar Fundo da Página</h2>
+  <form action="/trocar_fundo" method="get">
+      <label>Informe o nome do arquivo de imagem (exemplo: fundo.jpg, fundo.png):</label><br>
+      <input type="text" name="fundo">
+      <button type="submit">Trocar Fundo</button>
+  </form>
 {% endblock %}
