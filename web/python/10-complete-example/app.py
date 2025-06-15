@@ -33,7 +33,7 @@ def cadastro():
     except Exception as e:
         return f"Houve um erro no nosso sistema super seguro de coleta de dados confidenciais. Erro: {str(e)}"
 
-UPLOAD_FOLDER = os.path.join('static', 'img')
+UPLOAD_FOLDER = os.path.join('static', 'images')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route("/upload_fundo", methods=["POST"])
