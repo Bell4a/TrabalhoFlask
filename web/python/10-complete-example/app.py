@@ -6,25 +6,25 @@ from model import *
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    return render_template("home.html", fundo=fundo_atual)
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    return render_template("about.html", fundo=fundo_atual)
 
 @app.route("/listar_pessoas")
 def listar_pessoas():
     with db_session:
         # obtém as pessoas
         pessoas = Pessoa.select() 
-        return render_template("listar_pessoas.html", pessoas=pessoas)
+        return render_template("listar_pessoas.html", pessoas=pessoas, fundo=fundo_atual)
 
 @app.route("/form_adicionar_pessoa")
 def form_adicionar_pessoa():
-    return render_template("form_adicionar_pessoa.html")
+    return render_template("form_adicionar_pessoa.html", fundo=fundo_atual)
 
-@app.route("/adicionar_pessoa")
-def adicionar_pessoa():
+@app.route("/cadastro")
+def cadastro():
     # obter os parâmetros
     nome = request.args.get("nome")
     email = request.args.get("email")
