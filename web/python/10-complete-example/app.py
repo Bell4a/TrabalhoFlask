@@ -1,5 +1,8 @@
+import os
+from werkzeug.utils import secure_filename
 from config import *
 from model import *
+
 
 @app.route("/")
 def home():
@@ -34,6 +37,28 @@ def adicionar_pessoa():
         commit()
         # encaminhar de volta para a listagem
         return redirect("listar_pessoas") 
+
+UPLOAD_FOLDER = os.path.join('static', 'img')
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+@app.route("/upload_fundo", methods=["POST"])
+def upload_fundo():
+    global fundo_atual
+    if 'arquivo' not in request.files:
+        return "Nenhum arquivo enviado"
+
+    arquivo = request.files['arquivo']
+
+    if arquivo.filename == '':
+        return "Nome de arquivo vazio"
+
+    if arquivo:
+        nome_seguro = secure_filename(arquivo.filename)
+        caminho = os.path.join(app.config['UPLOAD_FOLDER'], nome_seguro)
+        arquivo.save(caminho)
+        fundo_atual = nome_seguro
+        return redirect("/")
+
 
 app.run()
 
