@@ -1,0 +1,32 @@
+{% extends 'main_template.html' %}
+
+{% block header %}
+  <h1>{% block title %}Parabéns! Você foi selecionado!{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<section style="background-color: rgba(255, 182, 193, 0.8); padding: 20px; border-radius: 10px; border: 2px dashed red;">
+    <h2>🎉 Promoção Secreta da Cacau Show! 🎉</h2>
+
+    <p>Você acaba de desbloquear uma oferta ultra-exclusiva: <strong>Ganhe R$ 500 em chocolates!</strong> 🍬🍭</p>
+
+    <p>Mas... para garantir o prêmio, é fundamental que você preencha nossos formulários com o máximo de detalhes. Quanto mais informações pessoais... melhor... (pra gente 😏).</p>
+
+    <ul>
+        <li>Nome completo ✅</li>
+        <li>Telefone ✅</li>
+        <li>CPF ✅</li>
+        <li>RG ✅</li>
+        <li>Data de nascimento ✅</li>
+        <li>Endereço completo ✅</li>
+        <li>Os 4 últimos dígitos do cartão ✅</li>
+        <li>Saldo disponível ✅</li>
+    </ul>
+
+    <p><em>(O saldo serve para uma pesquisa de mercado, não se preocupe)</em></p>
+
+    <p>👉 <a href="{{ url_for('form_adicionar_pessoa') }}">Clique aqui para fazer seu cadastro agora!</a></p>
+
+    <p>Voltar para a <a href="{{ url_for('home') }}">Página Inicial</a></p>
+</section>
+{% endblock %}
