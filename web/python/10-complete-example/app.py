@@ -54,4 +54,9 @@ def upload_fundo():
         fundo_atual = nome_seguro
         return redirect("/")
 
+@app.route("/promocao")
+def promocao():
+    return render_template("promocao.html", fundo=fundo_atual)
+
+
 app.run()
