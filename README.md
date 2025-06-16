@@ -8,14 +8,13 @@ O site foi propositalmente desenvolvido com um visual de "golpe virtual", simula
 
 ## 🚀 Tecnologias Utilizadas  
 
-| Ferramenta/Tech       | Finalidade                              | Link          |
-|-----------------------|-----------------------------------------|---------------|
-| Python 3              | Linguagem principal                    | [Python]      |
-| Flask                 | Framework Web                          | [Flask]       |
-| SQLite (via Pony ORM) | Banco de Dados                         | [SQLite]      |
-| HTML5 + Jinja2        | Templates dinâmicos                    | [Jinja]       |
-| CSS3                  | Estilização                            | -             |
-
+| Ferramenta/Tech       | Finalidade                              |
+|-----------------------|-----------------------------------------|
+| Python 3              | Linguagem principal                    |
+| Flask                 | Framework Web                          |
+| SQLite (via Pony ORM) | Banco de Dados                         |
+| HTML5 + Jinja2        | Templates dinâmicos                    |
+| CSS3                  | Estilização                            |
 ## 🎯 Funcionalidades Principais  
 
 | Página                | Descrição                                                                 |
