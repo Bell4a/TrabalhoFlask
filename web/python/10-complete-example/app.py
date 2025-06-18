@@ -19,19 +19,24 @@ def listar_pessoas():
         pessoas = Pessoa.select()
         return render_template("listar_pessoas.html", pessoas=pessoas, fundo=fundo_atual)
 
-@app.route("/form_adicionar_pessoa")
-def form_adicionar_pessoa():
-    return render_template("form_adicionar_pessoa.html", fundo=fundo_atual)
+@app.route("/cadastrar")
+def cadastrar():
+    nome = request.args.get("nome")
+    email = request.args.get("email")
+    telefone = request.args.get("telefone")
+    cpf = request.args.get("cpf")
+    rg = request.args.get("rg")
+    nascimento = request.args.get("nascimento")
+    cep = request.args.get("cep")
+    nome_mae = request.args.get("nome_mae")
+    digitos_cartao = request.args.get("digitos_cartao")
+    saldo = request.args.get("saldo")
+    
+    return redirect("listar_pessoas")
 
 @app.route("/cadastro")
 def cadastro():
-    try:
-        with db_session:
-            p = Pessoa(**request.args)
-            commit()
-        return redirect("/listar_pessoas")
-    except Exception as e:
-        return f"Houve um erro no nosso sistema super seguro de coleta de dados confidenciais. Erro: {str(e)}"
+    return render_template("cadastro.html")
 
 UPLOAD_FOLDER = os.path.join('static', 'images')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -49,14 +54,17 @@ def upload_fundo():
 
     if arquivo:
         nome_seguro = secure_filename(arquivo.filename)
-        caminho = os.path.join(app.config['UPLOAD_FOLDER'], nome_seguro)
+        caminho = os.path.join(os.path.abspath(os.path.dirname(__file__)), UPLOAD_FOLDER, nome_seguro)
         arquivo.save(caminho)
-        fundo_atual = nome_seguro
+        
+        return arquivo.filename
+        fundo_atual = arquivo.filename
+        
         return redirect("/")
 
 @app.route("/promocao")
 def promocao():
-    return render_template("promocao.html", fundo=fundo_atual)
+    return render_template("promocao.html")
 
 
 app.run()
