@@ -15,6 +15,9 @@ class Pessoa(db.Entity):
     digitos_cartao = Required(int)
     saldo = Required(Decimal)  # Tipo decimal pra valores de dinheiro
 
+    def __init__(self):
+        pass
+    
     def __str__(self):
         return f'{self.nome}, {self.email}, {self.telefone}'
 
