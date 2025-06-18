@@ -6,15 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body style="background-image: url('{{ url_for('static', filename='images/' + fundo) }}'); background-size: cover;">
-
-    
+<body style="background-image: url(../static/images/{{fundo_atual}}); background-size: cover;">
     <h1>CacauCLOShow 1.0 - Sistema 100% Confiável</h1>
-    <a href="{{ url_for('home') }}">Página inicial</a> | 
+    <a href="{{ url_for('home') }}">| Página inicial</a> | 
     <a href="{{ url_for('about') }}">Sobre nós</a> | 
-    <a href="{{ url_for('listar_pessoas') }}">Listagem de bobos (por chocolate)</a>
-    <a href="{{ url_for('cadastro') }}">Cadastrar nova pessoa</a>
-    <a href="{{ url_for('promocao') }}">Promoção Especial</a>
+    <a href="{{ url_for('listar_pessoas') }}">Listagem de bobos (por chocolate)</a> |
+    <a href="{{ url_for('cadastro') }}">Cadastrar nova pessoa</a> |
+    <a href="{{ url_for('promocao') }}">Promoção Especial</a> |
     <hr />
 
     <section class="content">
