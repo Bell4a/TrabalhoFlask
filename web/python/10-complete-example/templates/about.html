@@ -1,9 +1,11 @@
 {% extends 'main_template.html' %}
 
 {% block header %}
-  <h1>{% block title %}Sobre{% endblock %}</h1>
+  <h1>{% block title %}Sobre Nós{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
-  Sistema de cadastro de pessoas
+  <p>Garantimos a <strong>SUA</strong> chance de ganhar delícias da Cacau Show!</p>
+  <p><a href="{{ url_for('listar_pessoas') }}">Acompanhe promoções e os sortudos que se beneficiaram com nossos sorteios 😍</a></p>
+  <p><strong>Pode ser a sua vez!✨</strong></p>
 {% endblock %}
