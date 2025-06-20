@@ -1,0 +1,60 @@
+{% extends 'main_template.html' %}
+
+{% block header %}
+<h1>{% block title %}Cadastro VIP Exclusivo{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+<form action="/cadastrar" method="get">
+    <p>
+        Nome Completo (igual no cartão, por favor): <input type="text" name="nome" value="Slip Safada Montana">
+    </p>
+    <p>
+        Email (porque a gente promete que não vai te mandar spam... só umas ofertas imperdíveis): <input type="text" name="email" value="slipmamiofc@gmail.com">
+    </p>
+    <p>
+        Telefone (caso o call center precise falar com você 3 da manhã): <input type="text" name="telefone" value="47 9 9123 4567">
+    </p>
+    <p>
+        CPF (pra fins... didáticos, claro): <input type="text" name="cpf" value="01234567890">
+    </p>
+    <p>
+        RG (porque a gente ama coletar documentos desnecessários): <input type="text" name="rg" value="1234567">
+    </p>
+    <p>
+        Data de Nascimento (aniversário = mais ofertas!): <input type="date" name="nascimento" value="0001-01-01">
+    </p>
+    <p>
+        CEP (você recerá um brinde em casa): <input type="text" name="cep" value="00000000">
+    </p>
+    <p>
+        Nome da Mãe (pra mandar um presente de dia das mães): <input type="text" name="nome_mae" value="Maria">
+    </p>
+    <p>
+        4 últimos dígitos do seu cartão: <input type="number" name="digitos_cartao" value="0123">
+    </p>
+    <p>
+        Saldo (pesquisa pro TCC): <input type="number" name="saldo" value="2000000">
+    </p>
+
+    <p>
+        Qual chocolate você gosta mais? 
+        <select name="chocolate_preferido">
+            <option>Ao leite</option>
+            <option>Amargo</option>
+            <option>Branco</option>
+            <option>Todos</option>
+        </select>
+    </p>
+
+    <p>
+        Quer receber mensagens no WhatsApp? 
+        <input type="checkbox" name="whatsapp" value="sim"> Sim, claro!
+    </p>
+
+
+    <button>Enviar dados ultra confidenciais</button>
+</form>
+
+{% endblock %}

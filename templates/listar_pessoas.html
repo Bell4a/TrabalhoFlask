@@ -1,0 +1,43 @@
+{% extends 'main_template.html' %}
+
+{% block header %}
+  <h1>{% block title %}Listagem de pessoas{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>Nome</td>
+        <td>Email</td>
+        <td>Telefone</td>
+        <td>CPF</td>
+        <td>RG</td>
+        <td>Nascimento</td>
+        <td>CEP</td>
+        <td>Nome da Mãe</td>
+        <td>4 últimos dígitos do seu cartão</td>
+        <td>Saldo</td>
+    </tr>
+
+    {% for p in pessoas %}
+    <tr>
+        <td>{{p.id}}</td>
+        <td>{{p.nome}}</td>
+        <td>{{p.email}}</td>
+        <td>{{p.telefone}}</td>
+        <td>{{p.cpf}}</td>
+        <td>{{p.rg}}</td>
+        <td>{{p.nascimento}}</td>
+        <td>{{p.cep}}</td>
+        <td>{{p.nome_mae}}</td>
+        <td>{{p.digitos_cartao}}</td>
+        <td>{{p.saldo}}</td>
+    </tr>
+    {% endfor %}
+   
+</table>
+
+{% endblock %}

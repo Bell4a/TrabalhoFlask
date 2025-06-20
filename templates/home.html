@@ -1,0 +1,25 @@
+{% extends 'main_template.html' %}
+
+{% block header %}
+  <h1>{% block title %}Promoção Imperdível da Cacau Show!{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+   <h2>🍫 Ganhe uma cesta de chocolates! 🍫</h2>
+
+    <p>Cadastre-se agora e concorra a uma cesta recheada de delícias da Cacau Show! 😍</p>
+    
+    <p><strong>Atenção:</strong> Para garantir sua participação, complete o cadastro e informe todos os seus dados corretamente. (Inclusive aqueles que nenhum site sério pediria... mas a gente pede! 😈)</p>
+
+    <h3 style="color: darkred;">⏰ Promoção válida só HOJE! ⏰</h3>
+    <p><a href="{{ url_for('promocao') }}" style="color: green; font-weight: bold;">Clique aqui para saber mais sobre a promoção!</a></p>
+
+    <h2>🌈 Personalize o visual do site!</h2>
+    <p>Quer deixar esse site ainda mais com a sua cara? Faça o upload de um fundo personalizado:</p>
+
+<form action="/upload_fundo" method="post" enctype="multipart/form-data">
+    <input type="file" name="arquivo">
+    <button type="submit">Enviar Imagem</button>
+</form>
+
+{% endblock %}
