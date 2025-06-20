@@ -1,5 +1,11 @@
 body {
     background-image: url('../images/background.jpg');
+    /* background-color: aqua; */
+}
 
- /* background-color: aqua; */
+.header-container {
+    text-align: center;
+}
+.nav-links {
+    display: inline-block;
 }
